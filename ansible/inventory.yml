@@ -1,0 +1,8 @@
+controllers:
+  hosts:
+    k8s-alpha.local:
+    k8s-beta.local:
+    k8s-delta.local:
+
+nodes:
+  hosts:

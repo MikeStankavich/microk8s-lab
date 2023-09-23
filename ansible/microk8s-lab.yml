@@ -1,0 +1,22 @@
+- hosts: all
+#  roles:
+#    - role: istvano.microk8s
+#      vars:
+#        microk8s_enable_HA: yes
+#        microk8s_group_HA: controllers
+#        microk8s_group_WORKERS: nodes
+#        microk8s_plugins:
+#          dns: "1.1.1.1"
+#          ingress: true
+#          metrics-server: false
+#          cert-manager: true
+#          openebs: true
+#          portainer: true
+#          helm3: true
+  tasks:
+    - name: Adding microk8s group to {{ ansible_user_id }}
+      become: yes
+      user:
+          name={{ ansible_user_id }}
+          groups=microk8s
+          append=yes
